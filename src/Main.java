@@ -36,7 +36,6 @@ public class Main {
         System.out.println("The average number of absences: " + avg);
 
         //calculate the number of students with less than 3 absences
-        int countToThree = 3;
         int count = 0;
 
         for (int i = 0; i < absences.size(); i++) {
@@ -44,8 +43,12 @@ public class Main {
                 count++;
             }
         }
-        System.out.println("Students with less than 3 absences: " + count);
+        System.out.println("The number of students with less than 3 absences: " + count);
 
+        //what percentage of students who had fewer than 3 absences also had perfect attendance?
+        //parts divided by whole
+        int sum = countPerfect % count;
+        System.out.println("The number of students with perfect attendance and less than 3 absences: " + sum);
     }
 
     private static double average(ArrayList<Integer> absences) {
@@ -61,8 +64,4 @@ public class Main {
         }
         return sum;
     }
-
-    //what percentage of students who had fewer than 3 absences also had perfect attendance?
-
-
 }
