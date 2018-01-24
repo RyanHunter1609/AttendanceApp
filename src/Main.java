@@ -49,4 +49,12 @@ public class Main {
         }
         return sum;
     }
+
+    //what percentage of students who had fewer than 3 absences also had perfect attendance?
+    private static int attendance(ArrayList<Integer> absences, int attendance) {
+        int sum = 0;
+        
+
+    }
+
 }
