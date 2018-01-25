@@ -49,6 +49,8 @@ public class Main {
         //parts divided by whole
         int sum = countPerfect % count;
         System.out.println("The number of students with perfect attendance and less than 3 absences: " + sum);
+
+        // the index(es) of the students who had a specified number of absences.
     }
 
     private static double average(ArrayList<Integer> absences) {
