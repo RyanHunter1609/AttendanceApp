@@ -49,6 +49,11 @@ public class Main {
         //parts divided by whole
         int sum = countPerfect % count;
         System.out.println("The number of students with perfect attendance and less than 3 absences: " + sum);
+
+        System.out.println("Type the number of absences: ");
+        int number = Integer.parseInt(scanner.nextLine());
+        System.out.println("USER INPUT: " + number);
+        System.out.println(absences.lastIndexOf(number) + " student(s) had " + number + " absence(s).");
     }
 
     private static double average(ArrayList<Integer> absences) {
@@ -68,12 +73,11 @@ public class Main {
     // the index(es) of the students who had a specified number of absences.
     private ArrayList<Integer> absences;
 
-    private int getElementPos(int element) {
-        return absences.indexOf(getElementPos(element));
+//    private int getElementPos(int element) {
+//        return absences.indexOf(getElementPos(element));
 
         //output position of element
 
 
-    }
 }
 
