@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -35,26 +36,20 @@ public class Main {
         //output average of absences
         System.out.println("The average number of absences: " + avg);
 
-        //calculate the number of students with less than 3 absences
-        int count = 0;
+        int absenceThree = lessThanThreeAbsences(absences);
 
-        for (int i = 0; i < absences.size(); i++) {
-            if (absences.get(i) < 3) {
-                count++;
-            }
-        }
-        System.out.println("The number of students with less than 3 absences: " + count);
 
-        //what percentage of students who had fewer than 3 absences also had perfect attendance?
-        //parts divided by whole
-        int sum = countPerfect % count;
-        System.out.println("The number of students with perfect attendance and less than 3 absences: " + sum);
+        System.out.println("The number of students with less than 3 absences: " + absenceThree);
+
+
+        System.out.println("The number of students with perfect attendance and less than 3 absences: " + lessThanThreeSum(countPerfect, absenceThree));
 
         System.out.println("Type the number of absences: ");
         int number = Integer.parseInt(scanner.nextLine());
         System.out.println("USER INPUT: " + number);
         System.out.println(absences.lastIndexOf(number) + " student(s) had " + number + " absence(s).");
     }
+
 
     private static double average(ArrayList<Integer> absences) {
         //put double in parentheses to 'Cast' it as a double instead of an int problem
@@ -70,14 +65,25 @@ public class Main {
         return sum;
     }
 
-    // the index(es) of the students who had a specified number of absences.
-    private ArrayList<Integer> absences;
+    private static int lessThanThreeAbsences(ArrayList<Integer> absences) {
+        //calculate the number of students with less than 3 absences
+        int count = 0;
 
-//    private int getElementPos(int element) {
-//        return absences.indexOf(getElementPos(element));
+        for (int i = 0; i < absences.size(); i++) {
+            if (absences.get(i) < 3) {
+                count++;
+            }
+        }
+        return lessThanThreeAbsences(absences);
+    }
 
-        //output position of element
+    private static int lessThanThreeSum(int countPerfect, int absenceThree) {
+        //what percentage of students who had fewer than 3 absences also had perfect attendance?
+        //parts divided by whole
+        int sum = countPerfect % absenceThree;
+        return sum;
 
+    }
 
 }
 
